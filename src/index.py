@@ -19,7 +19,7 @@ shp_layer = create_shp.CreateLayer('layername', srs = shp_proj)
 new_field = ogr.FieldDefn(str('ID'), ogr.OFTInteger)
 shp_layer.CreateField(new_field)
 
-gdal.Polygonize(band, None, shp_layer, 0, [], callback = None)
+gdal.Polygonize(band, band, shp_layer, 0, [], callback = None)
 create_shp.Destroy()
 raster = None
 
